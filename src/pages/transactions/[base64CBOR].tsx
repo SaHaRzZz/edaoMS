@@ -65,6 +65,12 @@ const GetTransaction: NextPage = () => {
   nativeScriptSet && Array.from(toIter(nativeScriptSet), (script) => {
     Array.from(toIter(script.get_required_signers()), (signer) => signerRegistry.add(toHex(signer)))
   })
+  const BackButton: NextPage<{
+    className?: string
+  }> = ({ children, className }) => {
+    const router = useRouter()
+    return <button className={className} onClick={() => router.back()}>{children}</button>;
+  }
 
   const txMessage = cardano.getTxMessage(transaction)
 
@@ -134,6 +140,7 @@ const GetTransaction: NextPage = () => {
                 <ShareIcon className='w-4' />
                 <span>Copy my signatures</span>
               </CopyVkeysButton>
+              
             </footer>
           </Panel>
         )}
@@ -163,6 +170,7 @@ const GetTransaction: NextPage = () => {
             name='flint'
             className='flex items-center space-x-1 p-2 disabled:border rounded bg-green-700 text-white disabled:bg-gray-100 disabled:text-gray-400' />
           <div className='flex grow justify-end items-center space-x-4'>
+            
             <SubmitTxButton
               className='py-2 px-4 font-semibold bg-green-700 text-white rounded disabled:border disabled:bg-gray-100 disabled:text-gray-400'
               transaction={signedTransaction}>
@@ -170,6 +178,7 @@ const GetTransaction: NextPage = () => {
             </SubmitTxButton>
           </div>
         </ManualSign>
+          <BackButton className='p-2 rounded text-white bg-green-700 border createTx'>Back</BackButton>
       </div>
     </Layout>
   )
