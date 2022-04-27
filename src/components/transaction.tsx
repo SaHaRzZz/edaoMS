@@ -621,6 +621,7 @@ const WalletIcon: NextPage<{
       alt={name}
       src={icon}
     />
+  )
 }
 
 type WalletName = 'eternl' | 'nami' | 'gero' | 'flint'
