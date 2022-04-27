@@ -83,7 +83,11 @@ const BackButton: NextPage<{
   className?: string
 }> = ({ children, className }) => {
   const router = useRouter()
-  return <button className={className} onClick={() => router.back()}>{children}</button>;
+  return     <Link href={`/`}>
+  <a className={className}>
+    {children}
+  </a>
+</Link>;
 }
 
 const NavLink: NextPage<{
