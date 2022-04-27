@@ -525,10 +525,10 @@ const NativeScriptInfoViewer: NextPage<{
   const treasury = useLiveQuery(async () => db.treasuries.get(hash.to_hex()), [script])
 
   if (!treasury) return (
-    <div className='p-4 text-white bg-green-700 rounded shadow space-y-1'>
-      <div className='font-semibold'>Note</div>
+    <div className='p-4 text-white bg-green-700 rounded shadow space-y-1 text-center'>
+      <div className='font-semibold'>First time here?</div>
       <div>
-        <Link href={getTreasuryPath(script, 'edit')}><a className='underline'>save it</a></Link>
+        <Link href={getTreasuryPath(script, 'edit')}><a className='underline'>click here</a></Link>
       </div>
     </div>
   )
