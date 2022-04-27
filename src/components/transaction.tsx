@@ -528,7 +528,7 @@ const NativeScriptInfoViewer: NextPage<{
     <div className='p-4 text-white bg-green-700 rounded shadow space-y-1'>
       <div className='font-semibold'>Note</div>
       <div>
-        This is an unknown treasury. You can <Link href={getTreasuryPath(script, 'edit')}><a className='underline'>save it</a></Link> by editing its info.
+        <Link href={getTreasuryPath(script, 'edit')}><a className='underline'>save it</a></Link>
       </div>
     </div>
   )
@@ -767,7 +767,7 @@ const WalletInfo: NextPage<{
   }, [name])
 
   return (
-    <li className={className}>
+    <div className={`${className} col-md-6 col-lg-4 `}>
       <div className='h-9'>
       <Image src={src} width={36} height={36} alt={name} />
       </div>
@@ -775,7 +775,7 @@ const WalletInfo: NextPage<{
         <div className='font-semibold'>{children}</div>
         <div className='text-sm text-gray-700'>{wallet?.apiVersion ?? 'Not Installed'}</div>
       </div>
-    </li>
+    </div>
   )
 }
 

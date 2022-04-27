@@ -64,15 +64,19 @@ const [config, _] = useContext(ConfigContext)
           <h1 className='text-lg font-semibold'>Emerald DAO treasury</h1>
           <p>Welcome to the Emerald DAO multi-signature wallet!</p>
           <p>This multi-sig wallet is based on the incredible work of ADAO!</p>
-          <p className='btn btn-primary'><Link href='/treasuries/ggGCggBYHGb7E96oHwqudCRWxmAKOXdf3fvozpbLZivFslCCAFgc331TqwsaW%2FTZPUiOshqmKl%2FOf0kFA82ZXC563Q%3D%3D'><a className='text-green-700'>Click here to enter</a></Link></p>
-          <div className='justify-content-between container'>
-            <div className='row'>
-              <WalletInfo className='flex border rounded p-2 space-x-2 items-center col m-auto col shadow sWalletInfo' name='nami' src='/nami.svg'>Nami Wallet</WalletInfo>
-              <WalletInfo className='flex border rounded p-2 space-x-2 items-center col m-auto col shadow sWalletInfo' name='eternl' src='/eternl.png'>Eternl/cc Wallet</WalletInfo>
-              <WalletInfo className='flex border rounded p-2 space-x-2 items-center col m-auto col shadow sWalletInfo' name='gero' src='https://gerowallet.io/assets/img/logo2.ico'>Gero Wallet</WalletInfo>
+          <div>
+            <Link href='/treasuries/gwMDh4IAWBxm%2BxPeqB8KrnQkVsZgCjl3X9376M6Wy2YrxbJQggBYHN99U6sLGlv02T1IjrIapipfzn9JBQPNmVwuet2CAFgciyp9NWVojivWyjU7cFKYk17psBBHx1VrIBeNk4IAWBxKZxIIv%2B0hbGkUZzY1NzYjs0UxnLJj2s%2BMuwiOggBYHCaBRmSrS%2FlPKB%2B%2FcRhKpCxWavDCKKzqnUgJs4qCAFgc6wZc%2FeQU%2F7Wu6HrLUkOVIpyX5heE1qOiZqZdQ4IAWBwVMPApBxHXgs%2FJuXcfPeQe4Klk9aN5Jcy9QPw3'>
+              <button className='py-4 border text-white bg-green-700 rounded createTx'>Click here to enter</button>
+            </Link>
+            </div>
+          <div className=''>
+            <div className='walletOrder'>
+              <WalletInfo className='border rounded p-2 space-x-2 items-center mx-auto shadow sWalletInfo' name='nami' src='/nami.svg'>Nami Wallet</WalletInfo>
+              <WalletInfo className='border rounded p-2 space-x-2 items-center mx-auto shadow sWalletInfo' name='eternl' src='/eternl.png'>Eternl/cc Wallet</WalletInfo>
+              <WalletInfo className='border rounded p-2 space-x-2 items-center mx-auto shadow sWalletInfo' name='gero' src='https://gerowallet.io/assets/img/logo2.ico'>Gero Wallet</WalletInfo>
             </div>
           </div>
-          <p>We have an active and welcoming community. If you have any issues or questions, feel free to reach out to us via <a className='text-green-700' target='_blank' rel='noreferrer' href='https://discord.gg/SDnm4GzY'>Discord</a>.</p>
+          <p>We have an active and welcoming community. If you have any issues or questions, feel free to reach out to us via <a className='text-green-700' target='_blank' rel='noreferrer' href='https://discord.gg/A2bNwN5PQq'>Discord</a>.</p>
         </Panel>
       </div>
     </Layout>

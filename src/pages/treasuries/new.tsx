@@ -147,8 +147,8 @@ const NewTreasury: NextPage = () => {
   const [keyHashMap, setKeyHashMap] = useState<KeyHashMap>(new Map())
   const [scriptType, setScriptType] = useState<MultiSigType>('all')
   const [required, setRequired] = useState(1)
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
+  const name = 'Emerald DAO treasury';
+  const description = 'This is the official multi-signature wallet of the Emerald DAO!'
   const [config, _] = useContext(ConfigContext)
   const { notify } = useContext(NotificationContext)
   const cardano = useCardanoMultiplatformLib()
@@ -190,24 +190,6 @@ const NewTreasury: NextPage = () => {
         </Hero>
         <Panel>
           <div className='p-4 space-y-4'>
-            <label className='block space-y-1'>
-              <div className="after:content-['*'] after:text-red-500">Name</div>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className='p-2 block border w-full rounded'
-                placeholder='Write Name' />
-            </label>
-            <label className='block space-y-1'>
-              <div>Description</div>
-              <textarea
-                className='p-2 block border w-full rounded'
-                placeholder='Describe the treasury'
-                rows={4}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}>
-              </textarea>
-            </label>
             <KeyHashList className='space-y-1' keyHashMap={keyHashMap} deleteKeyHash={deleteKeyHash} />
             {keyHashMap.size > 1 &&
               <div className='space-y-1'>

@@ -1,3 +1,22 @@
 .createTx {
     width: 100%;
 }
+
+.sWalletInfo {
+    height: 70px;
+}
+
+@media screen and (min-width: 576px) {
+    .walletOrder {
+        display: flex;
+    }
+    .sWalletInfo {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .sWalletInfo {
+        height: 100px;
+    }
+}

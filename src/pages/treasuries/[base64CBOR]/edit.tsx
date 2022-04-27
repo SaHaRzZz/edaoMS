@@ -16,16 +16,11 @@ const EditTreasury: NextPage<{
 }> = ({ cardano, script }) => {
   const hash = cardano.hashScript(script)
   const treasury = useLiveQuery(async () => db.treasuries.get(hash.to_hex()), [script])
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
+  const name = 'Emerald DAO';
+  const description = 'This is the official multi-signature wallet of the Emerald DAO';
 
   useEffect(() => {
     let isMounted = true
-
-    if (isMounted && treasury) {
-      setName(treasury.name)
-      setDescription(treasury.description)
-    }
 
     return () => {
       isMounted = false
@@ -34,42 +29,15 @@ const EditTreasury: NextPage<{
 
   return (
     <Panel>
-      <div className='p-4 space-y-2'>
-        <label className='block space-y-1'>
-          <div className="after:content-['*'] after:text-red-500">Name</div>
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className='p-2 block border w-full rounded'
-            placeholder='Write Name' />
-        </label>
-        <label className='block space-y-1'>
-          <div>Description</div>
-          <textarea
-            className='p-2 block border w-full rounded'
-            placeholder='Describe the treasury'
-            rows={4}
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}>
-          </textarea>
-        </label>
-      </div>
       <footer className='flex justify-between p-4 bg-gray-100'>
-        <DeleteTreasuryButton
-          cardano={cardano}
-          className='px-4 py-2 text-green-700 disabled:text-gray-400'
-          script={script}>
-          Delete
-        </DeleteTreasuryButton>
-        <div className='space-x-2'>
-          <BackButton className='px-4 py-2 border rounded text-green-700'>Back</BackButton>
+        <div className='space-x-2 createTx'>
           <SaveTreasuryButton
             cardano={cardano}
-            className='px-4 py-2 bg-green-700 text-white rounded disabled:border disabled:text-gray-400 disabled:bg-gray-100'
+            className='px-4 py-2 bg-green-700 text-white rounded createTx'
             name={name}
             description={description}
             script={script}>
-            Save Treasury
+            I understand
           </SaveTreasuryButton>
         </div>
       </footer>
@@ -91,9 +59,11 @@ const GetTreasury: NextPage = () => {
   return (
     <Layout>
       <div className='space-y-2'>
-        <Hero>
-          <h1 className='font-semibold text-lg'>Edit Treasury Information</h1>
-          <p>Only descriptive information can be changed. If you want to change the signers, you have to create a new treasury. Deleting the info does not change any state of the treasury on chain. By deleting you merely deregister or forget it locally.</p>
+        <Hero className='text-center'>
+          <h1 className='font-semibold text-lg'>A bit of info before we begin</h1>
+          <p>This multi-signature wallet is the basis for decentralization for the Emerald DAO.</p>
+          <p>Each deciding member has 1 vote for deciding on approving a transaction.</p>
+          <p>Here you can propose whatever transaction you think is beneficial for the DAO, convince the DAO to pass the vote by explaining and sharing the proposal link, and get it approved!</p>
         </Hero>
         <Panel>
           <NativeScriptViewer className='p-4 space-y-2' cardano={cardano} script={script} />

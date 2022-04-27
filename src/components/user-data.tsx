@@ -109,7 +109,7 @@ const ImportUserData: NextPage = () => {
   }
 
   const clickHandle: MouseEventHandler<HTMLButtonElement> = () => {
-    const userData = JSON.parse(JSON.stringify({"isMainnet":true,"version":"1","treasuries":[{"name":"etseat","description":"etataet","script":"ggGCggBYHGb7E96oHwqudCRWxmAKOXdf3fvozpbLZivFslCCAFgc331TqwsaW/TZPUiOshqmKl/Of0kFA82ZXC563Q==","updatedAt":"2022-04-27T11:11:18.867Z"}]}))
+    const userData = JSON.parse(JSON.stringify({"isMainnet":true,"version":"1","treasuries":[{"name":"Emerald DAO test","description":"multi-sig test","script":"gwMDh4IAWBxm+xPeqB8KrnQkVsZgCjl3X9376M6Wy2YrxbJQggBYHN99U6sLGlv02T1IjrIapipfzn9JBQPNmVwuet2CAFgciyp9NWVojivWyjU7cFKYk17psBBHx1VrIBeNk4IAWBxKZxIIv+0hbGkUZzY1NzYjs0UxnLJj2s+MuwiOggBYHCaBRmSrS/lPKB+/cRhKpCxWavDCKKzqnUgJs4qCAFgc6wZc/eQU/7Wu6HrLUkOVIpyX5heE1qOiZqZdQ4IAWBwVMPApBxHXgs/JuXcfPeQe4Klk9aN5Jcy9QPw3","updatedAt":"2022-04-27T17:25:19.032Z"}]}))
     if (userData.isMainnet !== config.isMainnet) return;
     importUserData(userData)
   }
