@@ -108,7 +108,7 @@ const GetTransaction: NextPage = () => {
     <Layout>
       <div className='space-y-2'>
         <Hero>
-          <h1 className='font-semibold text-lg'>Review Transaction</h1>
+          <h1 className='font-semibold text-lg text-center'>Review Transaction</h1>
 
           <nav>
             <ShareCurrentURLButton
