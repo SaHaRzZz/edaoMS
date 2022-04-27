@@ -109,10 +109,10 @@ const GetTransaction: NextPage = () => {
       <div className='space-y-2'>
         <Hero>
           <h1 className='font-semibold text-lg'>Review Transaction</h1>
-          <p>Share current page URL to other signers so they can sign. After you have signed the transaction, you may copy your signatures to others to import. If the auto sync switch is on, your signatures would be exchanged automatically.</p>
+
           <nav>
             <ShareCurrentURLButton
-              className='flex space-x-1 bg-white text-green-700 py-1 px-2 rounded shadow w-32 justify-center items-center'>
+              className='flex space-x-1 bg-white text-green-700 py-1 px-2 rounded shadow w-32 justify-center items-center createTx'>
               <ShareIcon className='w-4' />
               <span>Copy URL</span>
             </ShareCurrentURLButton>
@@ -127,20 +127,10 @@ const GetTransaction: NextPage = () => {
           <Panel key={index}>
             <NativeScriptViewer className='p-4' cardano={cardano} script={script} signatures={signatureMap} />
             <footer className='flex p-4 bg-gray-100 space-x-2 justify-between'>
-              <div className='flex space-x-1 items-center'>
-                <SignatureSync
-                  cardano={cardano}
-                  txHash={txHash}
-                  signatures={signatureMap}
-                  signHandle={signHandle}
-                  signers={signerRegistry}
-                  config={config} />
-                <div className='text-sm'>Auto sync the signatures with other signers</div>
-              </div>
               <CopyVkeysButton
                 cardano={cardano}
                 vkeys={Array.from(signatureMap.values())}
-                className='flex space-x-1 justify-center items-center p-2 border text-green-700 rounded w-48 disabled:text-gray-400'>
+                className='flex space-x-1 justify-center items-center p-2 border text-green-700 rounded w-48 disabled:text-gray-400 createTx'>
                 <ShareIcon className='w-4' />
                 <span>Copy my signatures</span>
               </CopyVkeysButton>

@@ -30,7 +30,7 @@ const Toggle: NextPage<{
 
 const Panel: NextPage<{ className?: string }> = ({ children, className }) => {
   return (
-    <div className={'border-t-4 border-green-700 bg-white rounded shadow overflow-hidden ' + className}>
+    <div className={'border-t-4 text-center border-green-700 bg-white rounded shadow overflow-hidden ' + className}>
       {children}
     </div>
   )
@@ -63,7 +63,7 @@ const CopyButton: NextPage<{
   }, [isCopied, ms])
 
   return (
-    <button className={className} disabled={disabled || isCopied} onClick={clickHandle}>
+    <button className={`${className}`} disabled={disabled || isCopied} onClick={clickHandle}>
       {isCopied ? 'Copied!' : children}
     </button>
   )
@@ -188,7 +188,7 @@ const CardanoScanLink: NextPage<{
   const [config, _] = useContext(ConfigContext)
   const host = config.isMainnet ? 'https://cardanoscan.io' : 'https://testnet.cardanoscan.io'
   const href = [host, type, id].join('/')
-  return <a className={className} href={href} target='_blank' rel='noreferrer'>{children}</a>;
+  return <a className={`${className} mx-auto bg-primary container-fluid`} style={{alignContent: 'center'}} href={href} target='_blank' rel='noreferrer'></a>;
 }
 
 const Hero: NextPage<{ className?: string }> = ({ className, children }) => {

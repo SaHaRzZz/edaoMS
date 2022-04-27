@@ -454,10 +454,10 @@ const TransactionBodyViewer: NextPage<{
     <Panel className='p-4 space-y-2'>
       <div className='space-y-1'>
         <div className='font-semibold'>Transaction Hash</div>
-        <div className='flex items-center space-x-1'>
+        <div className='container-fluid items-center space-x-1'>
           <span>{toHex(txHash)}</span>
           <span>
-            <CardanoScanLink className='block text-green-700 p-2' type='transaction' id={toHex(txHash)}><SearchIcon className='w-4' /></CardanoScanLink>
+            <CardanoScanLink className='block text-green-700 p-2 container' type='transaction' id={toHex(txHash)}><SearchIcon className='w-4' /></CardanoScanLink>
           </span>
         </div>
       </div>
@@ -588,6 +588,24 @@ const NativeScriptViewer: NextPage<{
       <div className='space-y-1'>
         <div className='font-semibold'>Required Signers</div>
         <div>{requireSignatures}</div>
+      </div>
+      <div className='space-y-1'>
+        <div className='font-semibold'>Key Hash</div>
+        <div>
+          {Array.from(toIter(script.get_required_signers()), (keyHash, index) => {
+            const signature = signatures?.get(toHex(keyHash))
+            const hex = signature && cardano.buildSignatureSetHex([signature])
+            return (
+              <div key={index} style={{whiteSpace: 'normal', wordWrap: 'break-word'}} className={'flefx text-wrap text-center mx-auto items-center ' + (signature ? 'text-green-500' : '')}>
+                <div className=''>
+                  <span className=''>{toHex(keyHash)}</span>
+                  {/* {signature && <span className=''><CheckIcon className='w-4' /></span>} */}
+                  {/* {hex && <CopyButton className='text-sm' getContent={() => hex} ms={500}><DuplicateIcon className='w-4' /></CopyButton>} */}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
