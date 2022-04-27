@@ -9,8 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "cypress": "cypress open",
-    "cypress:headless": "cypress run",
-    "buildAdv": "next build && next export"
+    "cypress:headless": "cypress run"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -24,8 +23,6 @@
     "gun": "^0.2020.1236",
     "nanoid": "^3.3.2",
     "next": "12.1.4",
-    "next-optimized-images": "^2.6.2",
-    "nextjs-export-path-map": "^0.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-number-format": "^4.9.1"

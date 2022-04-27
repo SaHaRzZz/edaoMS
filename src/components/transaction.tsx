@@ -12,6 +12,7 @@ import { Config, ConfigContext } from '../cardano/config'
 import { BackButton, CardanoScanLink, CopyButton, Panel, Toggle } from './layout'
 import { NextPage } from 'next'
 import { NotificationContext } from './notification'
+import Image from 'next/image'
 import { db } from '../db'
 import Gun from 'gun'
 import type { IGunInstance } from 'gun'
@@ -613,8 +614,13 @@ const WalletIcon: NextPage<{
 }> = ({ height, width, wallet, className }) => {
   const { name, icon } = wallet
   return (
-    <div>h</div>
-  )
+    <Image
+      height={height || 25}
+      width={width || 25}
+      className={className}
+      alt={name}
+      src={icon}
+    />
 }
 
 type WalletName = 'eternl' | 'nami' | 'gero' | 'flint'
@@ -762,7 +768,7 @@ const WalletInfo: NextPage<{
   return (
     <li className={className}>
       <div className='h-9'>
-        <div>h</div>
+      <Image src={src} width={36} height={36} alt={name} />
       </div>
       <div>
         <div className='font-semibold'>{children}</div>
