@@ -74,13 +74,7 @@ const ExportUserDataButton: NextPage = () => {
   const filename = `roundtable-backup.${config.isMainnet ? 'mainnet' : 'testnet'}.json`
 
   return (
-    <DownloadButton
-      blobParts={[JSON.stringify(userData)]}
-      options={{ type: 'application/json' }}
-      className='p-2 rounded bg-green-700 text-white'
-      download={filename}>
-      Export User Data
-    </DownloadButton>
+    <div></div>
   )
 }
 
@@ -145,12 +139,7 @@ const ImportUserData: NextPage = () => {
   }
 
   return (
-    <div className='rounded border border-green-700 overflow-hidden'>
-      <button
-        className='p-2 bg-green-700 text-white disabled:text-gray-400 disabled:bg-gray-100'
-        onClick={clickHandle}>
-        Import User Data
-      </button>
+    <div>
     </div>
   )
 }

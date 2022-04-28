@@ -3,6 +3,7 @@ import { Layout, Panel } from '../components/layout'
 import { useContext } from "react";
 import { ConfigContext } from "../cardano/config";
 import { ExportUserDataButton, ImportUserData } from '../components/user-data'
+import Link from 'next/link'
 
 const Configure: NextPage = () => {
   const [config, _] = useContext(ConfigContext)
@@ -15,36 +16,15 @@ const Configure: NextPage = () => {
           <span>{config.isMainnet ? 'Mainnet' : 'Testnet'}</span>
         </p>
         <p className='space-x-2'>
-          <span>Query API:</span>
-          <span>{config.queryAPI.type}</span>
-        </p>
-        {config.queryAPI.type == 'graphql' &&
-          <p className='space-x-2'>
-            <span>Query URI:</span>
-            <span>{config.queryAPI.URI}</span>
-          </p>
-        }
-        <p className='space-x-2'>
           <span>Submit API:</span>
           <span>{config.submitAPI}</span>
         </p>
-        {config.gunPeers && <div>
-          <span>GUN Peers:</span>
-          <ul>
-            {config.gunPeers.map((peer, index) => <li key={index}>{peer}</li>)}
-          </ul>
-        </div>}
-        <div className='font-semibold'>User Data Export/Import</div>
-        <p>User data has to be on the same network. For example, data exported from testnet cannot be imported to mainnet.</p>
-        <p>Save my treasuries</p>
-        <div className='flex'>
-          <ExportUserDataButton />
-        </div>
-        <p>Load my treasuries</p>
-        <div className='flex'>
-          <ImportUserData />
-        </div>
       </Panel>
+        <Link href='/'>
+          <a className='hover:bg-sky-700'>
+            <button className='p-2 rounded text-white bg-green-700 border createTx my-1' >Home</button>
+          </a>
+        </Link>
     </Layout>
   )
 }

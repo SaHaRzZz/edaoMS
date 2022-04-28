@@ -9,6 +9,7 @@ import type { Vkeywitness } from '@dcspark/cardano-multiplatform-lib-browser'
 import { useContext, useState } from 'react'
 import { ShareIcon, UploadIcon } from '@heroicons/react/solid'
 import { ConfigContext } from '../../cardano/config'
+import Link from 'next/link'
 
 const ManualSign: NextPage<{
   signHandle: (_: string) => void
@@ -65,12 +66,6 @@ const GetTransaction: NextPage = () => {
   nativeScriptSet && Array.from(toIter(nativeScriptSet), (script) => {
     Array.from(toIter(script.get_required_signers()), (signer) => signerRegistry.add(toHex(signer)))
   })
-  const BackButton: NextPage<{
-    className?: string
-  }> = ({ children, className }) => {
-    const router = useRouter()
-    return <button className={className} onClick={() => router.back()}>{children}</button>;
-  }
 
   const txMessage = cardano.getTxMessage(transaction)
 
@@ -178,7 +173,12 @@ const GetTransaction: NextPage = () => {
             </SubmitTxButton>
           </div>
         </ManualSign>
-          <BackButton className='p-2 rounded text-white bg-green-700 border createTx'>Back</BackButton>
+        <Link href='/'>
+          <a className='hover:bg-sky-700'>
+            <button className='p-2 rounded text-white bg-green-700 border createTx my-1' >Home</button>
+          </a>
+        </Link>
+          {/* <BackButton className='p-2 rounded text-white bg-green-700 border createTx'>Back</BackButton> */}
       </div>
     </Layout>
   )
