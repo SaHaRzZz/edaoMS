@@ -9,6 +9,7 @@ import { PlusIcon, TrashIcon } from '@heroicons/react/solid'
 import { isAddressNetworkCorrect, SaveTreasuryButton } from '../../components/transaction'
 import { NotificationContext } from '../../components/notification'
 import { ConfigContext } from '../../cardano/config'
+import Link from 'next/link'
 
 const AddAddress: NextPage<{
   cardano: Cardano
@@ -182,71 +183,11 @@ const NewTreasury: NextPage = () => {
   }
 
   return (
-    <Layout>
-      <div className='space-y-2'>
-        <Hero>
-          <h1 className='font-semibold text-lg'>New Treasury</h1>
-          <p>Start to create a treasury protected by Multi-Sig native scripts from here. A treasury needs more than one address. Only receiving address should be used.</p>
-        </Hero>
-        <Panel>
-          <div className='p-4 space-y-4'>
-            <label className='block space-y-1'>
-              <div className="after:content-['*'] after:text-red-500">Name</div>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className='p-2 block border w-full rounded'
-                placeholder='Write Name' />
-            </label>
-            <label className='block space-y-1'>
-              <div>Description</div>
-              <textarea
-                className='p-2 block border w-full rounded'
-                placeholder='Describe the treasury'
-                rows={4}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}>
-              </textarea>
-            </label>
-            <KeyHashList className='space-y-1' keyHashMap={keyHashMap} deleteKeyHash={deleteKeyHash} />
-            {keyHashMap.size > 1 &&
-              <div className='space-y-1'>
-                <div>Required Signers</div>
-                <div className='flex space-x-2 items-center'>
-                  <select className='bg-white border rounded text-sm p-2' onChange={(e) => setScriptType(e.target.value as MultiSigType)}>
-                    <option value="all">All</option>
-                    <option value="any">Any</option>
-                    <option value="atLeast">At least</option>
-                  </select>
-                  {scriptType == 'atLeast' &&
-                    <RequiredNumberInput
-                      className='border rounded p-1'
-                      max={keyHashMap.size}
-                      required={required}
-                      onCommit={setRequired} />
-                  }
-                  <div className='p-2 space-x-1'>
-                    <span>of</span>
-                    <span>{keyHashMap.size}</span>
-                  </div>
-                </div>
-              </div>}
-            <hr />
-            <AddAddress cardano={cardano} onAdd={addAddress} />
-          </div>
-          <footer className='flex justify-end p-4 bg-gray-100'>
-            <SaveTreasuryButton
-              cardano={cardano}
-              className='px-4 py-2 bg-green-700 text-white rounded disabled:border disabled:text-gray-400 disabled:bg-gray-100'
-              name={name}
-              description={description}
-              script={getScript()}>
-              Save Treasury
-            </SaveTreasuryButton>
-          </footer>
-        </Panel>
-      </div>
-    </Layout>
+    <Link href='/'>
+    <a className='hover:bg-sky-700'>
+      <button className='p-2 rounded text-white bg-green-700 border createTx my-1' >Home</button>
+    </a>
+  </Link>
   )
 }
 
