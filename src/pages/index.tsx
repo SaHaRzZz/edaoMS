@@ -65,7 +65,7 @@ const [config, _] = useContext(ConfigContext)
           <p>Welcome to the Emerald DAO multi-signature wallet!</p>
           <p>This multi-sig wallet is based on the incredible work of ADAO!</p>
           <div>
-            <Link href='/treasuries/gwMDh4IAWBxm%2BxPeqB8KrnQkVsZgCjl3X9376M6Wy2YrxbJQggBYHN99U6sLGlv02T1IjrIapipfzn9JBQPNmVwuet2CAFgciyp9NWVojivWyjU7cFKYk17psBBHx1VrIBeNk4IAWBxKZxIIv%2B0hbGkUZzY1NzYjs0UxnLJj2s%2BMuwiOggBYHCaBRmSrS%2FlPKB%2B%2FcRhKpCxWavDCKKzqnUgJs4qCAFgc6wZc%2FeQU%2F7Wu6HrLUkOVIpyX5heE1qOiZqZdQ4IAWBwVMPApBxHXgs%2FJuXcfPeQe4Klk9aN5Jcy9QPw3'>
+            <Link href='/treasuries/gwMGjIIAWBzGtZiKeVGGaIQ3gR9ol1MIdWf1Upnj1vH8GcInggBYHIqqFSyn5RB9429cYjxAK%2BcQ8P5M5cSwAFPjQuKCAFgcfeZ41JAbmqSadGTNhGsPj0UNGOLyBsHuqG%2BXmoIAWBx8LOcp5bxea5qdqdZnruojKQerWw4mMdE9uxGjggBYHIxE%2ByD3YwDwX9CP5qpWpqEVDWEzQoOLU45RpAeCAFgcpi6A9ZY5tD70%2FQnVt5mfX5thSr5R6Ca2uDKkR4IAWByNPZwUWNc6%2FJUoDKJEqasWgTrSH6KJ4M8JdkXBggBYHFWosetdwAtKDiRA745KjIfUiIJHB8RrZBkSgeyCAFgciyp9NWVojivWyjU7cFKYk17psBBHx1VrIBeNk4IAWBxh5DJ%2BdJepaYxeiWkSZOka2VXKeyVZtvRV2UrMggBYHGy4LJ1uAMNTdfSfUXRscX66E225ykFkvQgqH1CCAFgcZvsT3qgfCq50JFbGYAo5d1%2Fd%2B%2BjOlstmK8WyUA%3D%3D'>
               <button className='py-4 border text-white bg-green-700 rounded createTx'>Click here to enter</button>
             </Link>
             </div>
